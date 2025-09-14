@@ -1,4 +1,4 @@
-# Classes Lab
+# Python Classes Lab
 ### Exercise Introduction
 
 In this lab, you can practice object-oriented programming (OOP) by building a Tic-tac-toe terminal game with Python Classes.
