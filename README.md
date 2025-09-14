@@ -1,7 +1,6 @@
 # Classes Lab
-### Exercise
+### Exercise Introduction
 
-**Introduction**
 In this lab, you can practice object-oriented programming (OOP) by building a Tic-tac-toe terminal game with Python Classes.
 
 While working through this lab, consider the gameplay of Tic-Tac-Toe and, if necessary, pseudocode it. Try to write several small functions, each performing a single purpose, e.g., print_board, get_move, check_for_winner, etc. Consider how/where looping makes sense, e.g., loop until the player enters a correct move or until the game’s over, etc.
