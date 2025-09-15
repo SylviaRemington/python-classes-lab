@@ -15,17 +15,32 @@ class Game:
     # ADDING play_game method function to print a welcome message as per labs step 2
     # def play_game(self):
     #     print("Welcome to Tic-Tac-Toe!")
+
+    # Lastly, updated the play_game function above to run the full game loop
+    # Commenting out the function above and putting it under the check_for_tie for full functionality.
+    # I'm pretty sure I need to move it here so that it will work after all the other functions? Correct?
+    def play_game(self):
+        print("Welcome to Tic-Tac-Toe!")
+        while not self.winner and not self.tie:
+            self.print_board()
+            self.print_message()
+            self.get_move()
+            self.check_for_winner()
+            self.check_for_tie()
+            self.switch_turn()
+        self.print_board()
+        self.print_message()
     
     # Adding print_board method function - for displaying the 3X3 board
     def print_board(self):
         b = self.board
         print(f"""
-        A   B   C
-    1)  {b['a1'] or ' '} | {b['b1'] or ' '} | {b['c1'] or ' '}
-        ---------
-    2)  {b['a2'] or ' '} | {b['b2'] or ' '} | {b['c2'] or ' '}
-        ---------
-    3)  {b['a3'] or ' '} | {b['b3'] or ' '} | {b['c3'] or ' '}
+            A   B   C
+        1)  {b['a1'] or ' '} | {b['b1'] or ' '} | {b['c1'] or ' '}
+            ---------
+        2)  {b['a2'] or ' '} | {b['b2'] or ' '} | {b['c2'] or ' '}
+            ---------
+        3)  {b['a3'] or ' '} | {b['b3'] or ' '} | {b['c3'] or ' '}
         """)
 
     # Adding print_message to show whose turn it is and if winner or tie
@@ -66,20 +81,14 @@ class Game:
         if not self.winner and all(self.board.values()):
             self.tie = True
 
-    # Lastly, updated the play_game function above to run the full game loop
-    # Commenting out the function above and putting it under the check_for_tie for full functionality.
-    # I'm pretty sure I need to move it here so that it will work after all the other functions? Correct?
-    def play_game(self):
-        print("Welcome to Tic-Tac-Toe!")
-        while not self.winner and not self.tie:
-            self.print_board()
-            self.print_message()
-            self.get_move()
-            self.check_for_winner()
-            self.check_for_tie()
-            self.switch_turn()
-        self.print_board()
-        self.print_message()
+    # Adding switch_turn function at the end so I can alternate between players using X and O (so it goes back and forth between player X & O) after each move.
+    def switch_turn(self):
+        if self.turn == 'X':
+            self.turn = 'O'
+        else:
+            self.turn = 'X'
+
+
 
 
 
