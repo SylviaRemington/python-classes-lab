@@ -20,7 +20,7 @@ class Game:
     # Commenting out the function above and putting it under the check_for_tie for full functionality.
     # I'm pretty sure I need to move it here so that it will work after all the other functions? Correct?
     def play_game(self):
-        print("Welcome to Tic-Tac-Toe!")
+        print("Welcome to Tic-Tac-Toe!") # user story welcoming to game
         while not self.winner and not self.tie:
             self.print_board()
             self.print_message()
@@ -32,7 +32,7 @@ class Game:
         self.print_message()
     
     # Adding print_board method function - for displaying the 3X3 board
-    def print_board(self):
+    def print_board(self): # user story printing board on console before being prompted for a move
         b = self.board
         print(f"""
             A   B   C
@@ -50,12 +50,12 @@ class Game:
         elif self.winner:
             print(f"{self.winner} wins the game!")
         else:
-            print(f"It's player {self.turn}'s turn!")
+            print(f"It's player {self.turn}'s turn!") #user story showing whose turn it is
 
     # Adding get_move function to get and validate player's move and need to make sure lower case
     def get_move(self):
         while True:
-            move = input(f"Enter a valid move (example: A1): ").lower()
+            move = input(f"Enter a valid move (example: A1): ").lower() #user story to be prompted to enter a move and provided a valid input
             if move in self.board and self.board[move] is None:
                 self.board[move] = self.turn
                 break
