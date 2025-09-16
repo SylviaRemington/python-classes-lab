@@ -96,7 +96,8 @@ class Game:
         self.print_board()
         self.print_message()
 
-
+game = Game()
+game.play_game()
 
 
 # Testing code but need to remove after testing
@@ -105,7 +106,7 @@ class Game:
 # print(game.turn)
 
 
-# To test 2nd function of play_game
+# To test 2nd function of play_game before commented out
 # game = Game()
 # game.play_game()
 
@@ -141,12 +142,19 @@ class Game:
 # game.check_for_tie()
 # game.print_message()
 
-#Testing 8th function which is just a reworking of the play_game function
+# Testing switch_turn
+# game = Game()
+# game.switch_turn()
+# print(game.turn)
+
+#Testing last function which is just a reworking of the play_game function from the beginning with more complete code
 # game = Game()
 # game.play_game()
 
 
-# CORRECT ORDER
+
+
+# CORRECT ORDER so it works
 # __init__: Initializes game state.
 # print_board: Displays the board.
 # print_message: Shows turn or result.
