@@ -16,3 +16,8 @@ Your goal is to implement the following user stores:
 - AAU, if I enter a move in an invalid format or try to occupy a cell already taken, I want to see a message chastising me and be re-prompted.
 - AAU, after entering a move, I should once again be presented with the updated game board, notified of the current turn, and asked to enter a move for the other player. This process should continue until there is a winner or a tie
 - AAU, I should see a message at the end of the game indicating the winner or stating that the game ended in a tie.
+
+### After Completing Python Classes Lab, this is what occurred after running python3 exercises.py
+
+![PlayGame1stImage](./public/images/playgame1.png) <br>
+![PlayGame2ndImage](./public/images/playgame2.png) <br>
