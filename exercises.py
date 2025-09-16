@@ -15,22 +15,9 @@ class Game:
     # ADDING play_game method function to print a welcome message as per labs step 2
     # def play_game(self):
     #     print("Welcome to Tic-Tac-Toe!")
-
-    # Lastly, updated the play_game function above to run the full game loop
-    # Commenting out the function above and putting it under the check_for_tie for full functionality.
-    # I'm pretty sure I need to move it here so that it will work after all the other functions? Correct?
-    def play_game(self):
-        print("Welcome to Tic-Tac-Toe!") # user story welcoming to game
-        while not self.winner and not self.tie:
-            self.print_board()
-            self.print_message()
-            self.get_move()
-            self.check_for_winner()
-            self.check_for_tie()
-            self.switch_turn()
-        self.print_board()
-        self.print_message()
+    # But then commenting this part out and moving the whole complete function to the end so that tic tac toe works better.
     
+
     # Adding print_board method function - for displaying the 3X3 board
     def print_board(self): # user story printing board on console before being prompted for a move
         b = self.board
@@ -43,8 +30,9 @@ class Game:
         3)  {b['a3'] or ' '} | {b['b3'] or ' '} | {b['c3'] or ' '}
         """)
 
+
     # Adding print_message to show whose turn it is and if winner or tie
-    def print_message(self):
+    def print_message(self): #user story about seeing message at end of the game 
         if self.tie:
             print("Tie game!")
         elif self.winner:
@@ -52,14 +40,16 @@ class Game:
         else:
             print(f"It's player {self.turn}'s turn!") #user story showing whose turn it is
 
+
     # Adding get_move function to get and validate player's move and need to make sure lower case
     def get_move(self):
         while True:
-            move = input(f"Enter a valid move (example: A1): ").lower() #user story to be prompted to enter a move and provided a valid input
+            move = input(f"Enter a valid move (example: A1): ").lower() #user story to be prompted to enter a move and provided a valid input / plus can do lowercase and uppercase
             if move in self.board and self.board[move] is None:
                 self.board[move] = self.turn
                 break
-            print("Invalid move! Try again.")
+            print("Invalid move! Try again.") #user story - if move invalid, have a message "chastising & be reprompted"
+
 
     # Adding check_for_winner function to check the win conditions
     def check_for_winner(self):
@@ -76,10 +66,12 @@ class Game:
              (b['c1'] and b['c1'] == b['b2'] == b['a3']):
             self.winner = self.turn
 
+
     # Adding check_for_tie function so that you check to see if players tie
     def check_for_tie(self):
         if not self.winner and all(self.board.values()):
             self.tie = True
+
 
     # Adding switch_turn function at the end so I can alternate between players using X and O (so it goes back and forth between player X & O) after each move.
     def switch_turn(self):
@@ -88,6 +80,21 @@ class Game:
         else:
             self.turn = 'X'
 
+
+    # Lastly, updated the play_game function above to run the full game loop
+    # Commenting out the function above and putting it under the check_for_tie for full functionality.
+    # I'm pretty sure I need to move it here so that it will work after all the other functions? Correct?
+    def play_game(self):
+        print("Welcome to Tic-Tac-Toe!") # user story welcoming to game
+        while not self.winner and not self.tie: # user story process that continues with check_for_winner function until there is a winner or tie
+            self.print_board()
+            self.print_message()
+            self.get_move()
+            self.check_for_winner()
+            self.check_for_tie()
+            self.switch_turn()
+        self.print_board()
+        self.print_message()
 
 
 
@@ -135,5 +142,16 @@ class Game:
 # game.print_message()
 
 #Testing 8th function which is just a reworking of the play_game function
-game = Game()
-game.play_game()
+# game = Game()
+# game.play_game()
+
+
+# CORRECT ORDER
+# __init__: Initializes game state.
+# print_board: Displays the board.
+# print_message: Shows turn or result.
+# get_move: Handles player input.
+# check_for_winner: Checks for a win.
+# check_for_tie: Checks for a tie.
+# switch_turn: Switches players.
+# play_game: Runs the game loop, calling all above methods.
