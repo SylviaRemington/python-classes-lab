@@ -100,6 +100,9 @@ game = Game()
 game.play_game()
 
 
+# What I did below to test each function as I created it---------------------------------------------------
+# Also, sample of output of python3 exercises.py is in README as a screenshot -----------------------------
+
 # Testing code but need to remove after testing
 # To test 1st function above
 # game = Game()
@@ -152,14 +155,3 @@ game.play_game()
 # game.play_game()
 
 
-
-
-# CORRECT ORDER so it works
-# __init__: Initializes game state.
-# print_board: Displays the board.
-# print_message: Shows turn or result.
-# get_move: Handles player input.
-# check_for_winner: Checks for a win.
-# check_for_tie: Checks for a tie.
-# switch_turn: Switches players.
-# play_game: Runs the game loop, calling all above methods.
